@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './../auth/auth.service';
 import { Recipe } from './../recipes/recipe.model';
 import { RecipeService } from './../recipes/recipe.service';
@@ -16,11 +16,17 @@ export class DataStorageService {
 
   storeRecipes() {
     const token = this.authService.getToken();
+    const headers = new HttpHeaders().set(
+      'Authorization',
+      'Bearer afsdkflsdsk'
+    );
+
     return this.httpClient.put(
       'https://ng-recipe-book-332d2.firebaseio.com//recipes.json?auth=' + token,
       this.recipeService.getRecipes(),
       {
-        observe: 'body'
+        observe: 'body',
+        headers: headers
       }
     );
   }
