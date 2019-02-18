@@ -2,7 +2,6 @@ import { AuthGuard } from './../auth/auth.guard';
 import { AuthService } from './../auth/auth.service';
 import { DataStorageService } from './../shared/data-storage.service';
 import { RecipeService } from './../recipes/recipe.service';
-import { ShoppingListService } from './../shopping-list/shopping-list.service';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '../shared/shared.module';
 import { AppRoutingModule } from './../app-routing.module';
@@ -14,10 +13,9 @@ import { HomeComponent } from './home/home.component';
   declarations: [HeaderComponent, HomeComponent],
   exports: [AppRoutingModule, HeaderComponent],
   providers: [
-    ShoppingListService,
     RecipeService,
     DataStorageService,
     AuthService
   ]
 })
-export class CoreModule {}
+export class CoreModule { }
