@@ -1,14 +1,14 @@
-import { Ingredient } from "../../shared/ingredient.model";
-import * as ShoppingListActions from "./shopping-list.actions";
+import { Ingredient } from '../../shared/ingredient.model';
+import * as ShoppingListActions from './shopping-list.actions';
 
 export interface State {
-  ingredinets: Ingredient[];
+  ingredients: Ingredient[];
   editedIngredient: Ingredient;
   editedIngredientIndex: number;
 }
 
-const initialState = {
-  ingredients: [new Ingredient("Apples", 5), new Ingredient("Tomatoes", 10)],
+const initialState: State = {
+  ingredients: [new Ingredient('Apples', 5), new Ingredient('Tomatoes', 10)],
   editedIngredient: null,
   editedIngredientIndex: -1
 };
