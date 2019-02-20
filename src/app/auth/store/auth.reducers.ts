@@ -29,6 +29,11 @@ export function authReducer(
         token: null,
         authenticated: false
       };
+    case AuthActions.SET_TOKEN:
+      return {
+        ...state,
+        token: action.payload
+      };
     default:
       return state;
   }
